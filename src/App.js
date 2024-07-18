@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Mode from './Pages/Mode/Mode';
+import Genres from './Pages/Genres/Genres';
+import Ranking from './Pages/Ranking/Ranking';
+import Chance from './Pages/Chance/Chance';
+import NoPage from './Pages/NoPage/NoPage';
+import "./App.scss";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/mode' element={<Mode />}/>
+          <Route path='/genres/:mode' element={<Genres />} />
+          <Route path='/ranking/:genre' element={<Ranking />} />
+          <Route path='/chance/:genre' element={<Chance />} />
+          <Route path='*' element={<NoPage />} />  
+      </Routes>
+      </BrowserRouter>
+      
     </div>
-  );
-}
+)};
 
 export default App;
