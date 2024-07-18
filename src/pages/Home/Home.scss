@@ -1,1 +1,36 @@
-@use "../../assets/styleguide/styleguide.scss";
+@use "../../assets/styleguide/styleguide.scss" as styleguide;
+
+section {
+  @include styleguide.flexBoxColCenter;
+  justify-content: center;
+  @include styleguide.gradient-greys;
+  height: 100vh;
+
+  .homeBox {
+    @include styleguide.flexBoxColCenter;
+    justify-content: center;
+    background: url("../../assets/images/start.png") no-repeat center;
+    background-size: cover;
+    height: 90vh;
+    width: 650px;
+    padding: 60px;
+
+    .textBox {
+      @include styleguide.flexBoxColCenter;
+      justify-content: space-between;
+      margin: -400px 0 100px 0;
+      height: 150px;
+
+      p {
+        @include styleguide.h1Style;
+        color: styleguide.$gunmetal100;
+        line-height: 70px;
+      }
+      h1 {
+        @include styleguide.h1Style;
+        color: styleguide.$gunmetal100;
+        line-height: 70px;
+      }
+    }
+  }
+}

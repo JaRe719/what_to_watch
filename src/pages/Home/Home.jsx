@@ -1,12 +1,25 @@
-import React from 'react';
+import React from "react";
+import Button from "../../components/Button/Button";
 import "./Home.scss";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/mode");
+  };
   return (
-    <div>
-      Home
-    </div>
-  )
-}
+    <section>
+      <dir className="homeBox">
+        <div className="textBox">
+          <p>Don’t know</p>
+          <h1>what to watch?</h1>
+        </div>
 
-export default Home
+        <Button text="Let’s find out !" action={handleClick} />
+      </dir>
+    </section>
+  );
+};
+
+export default Home;

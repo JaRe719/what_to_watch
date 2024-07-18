@@ -1,1 +1,6 @@
-@use "../../assets/styleguide/styleguide.scss";
+@use "../../assets/styleguide/styleguide.scss" as styleguide;
+
+.errorPage {
+  background: url("../../assets/images/noPage.png") no-repeat center;
+  height: 100vh;
+}

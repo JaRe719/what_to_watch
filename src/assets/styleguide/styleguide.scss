@@ -1,0 +1,85 @@
+$gunmetal100: #e2e9e9;
+$gunmetal800: #1b2222;
+$caribbeanCurrent900: #0c393b;
+
+@font-face {
+  font-family: "Mitr-SemiBold";
+  src: url("../fonts/Mitr/Mitr-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf");
+}
+
+@mixin gradient-darkPink {
+  background: linear-gradient(
+    315deg,
+    rgba(166, 127, 142, 1) 0%,
+    rgba(207, 186, 194, 1) 100%
+  );
+}
+
+@mixin gradient-greys {
+  background: linear-gradient(
+    352deg,
+    rgba(45, 58, 58, 1) 0%,
+    rgba(89, 115, 115, 1) 50%,
+    rgba(140, 166, 166, 1) 100%
+  );
+}
+
+@mixin gradient-pinkLightblue {
+  background: linear-gradient(
+    315deg,
+    rgba(166, 207, 213, 1) 47%,
+    rgba(207, 186, 194, 1) 81%
+  );
+}
+
+@mixin flexBoxColCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flexBoxRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin h1Style {
+  font-family: "Mitr-SemiBold";
+  font-size: 6rem;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h2Style {
+  font-family: "Montserrat-SemiBold";
+  font-size: 4.8rem;
+  margin: 0;
+  padding: 0;
+  color: $caribbeanCurrent900;
+}
+
+@mixin h3Style {
+  font-family: "Mitr-SemiBold";
+  font-size: 3.2rem;
+  color: $gunmetal100;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin buttonStyle {
+  @include gradient-darkPink;
+  height: 60px;
+  width: 220px;
+
+  font-family: "Montserrat-SemiBold";
+  font-size: 2.6rem;
+  text-align: center;
+  padding-top: 12px;
+
+  color: $gunmetal800;
+}
