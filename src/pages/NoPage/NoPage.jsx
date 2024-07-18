@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 import "./NoPage.scss";
 
 const NoPage = () => {
-  return (
-    <div>
-      404 - Page not found
-    </div>
-  )
-}
+  return <div className="errorPage"></div>;
+};
 
 export default NoPage;

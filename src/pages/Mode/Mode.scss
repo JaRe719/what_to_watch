@@ -1,1 +1,42 @@
-@use "../../assets/styleguide/styleguide.scss";
+@use "../../assets/styleguide/styleguide.scss" as styleguide;
+
+.modeSide {
+  @include styleguide.flexBoxColCenter;
+  justify-content: space-between;
+  @include styleguide.gradient-darkPink;
+  padding: 10px 40px 100px 40px;
+  .headline {
+    align-self: flex-start;
+  }
+
+  h2 {
+    @include styleguide.h2Style;
+    margin-top: -100px;
+  }
+  .choiseBox {
+    @include styleguide.flexBoxRow;
+    justify-content: space-between;
+    height: 550px;
+    width: 85%;
+    .modeBox {
+      @include styleguide.flexBoxColCenter;
+      justify-content: space-between;
+      @include styleguide.gradient-greys;
+      width: 40%;
+      padding: 50px 20px 150px 20px;
+      div {
+        @include styleguide.gradient-pinkLightblue;
+        height: 200px;
+        width: 80%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      h3 {
+        @include styleguide.h3Style;
+      }
+    }
+  }
+}
