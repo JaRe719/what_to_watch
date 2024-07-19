@@ -8,7 +8,7 @@ const Genres = () => {
   const params = useParams();
   console.log("Params: ",params);
   return (
-    <div>
+    <div className='genresPage'>
       <GenreGrid mode={params.mode} />
     </div>
   )

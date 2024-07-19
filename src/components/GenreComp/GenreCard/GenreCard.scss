@@ -1,1 +1,25 @@
 @use "../../../assets/styleguide/styleguide.scss";
+
+.genreCard{
+    @include styleguide.flexBoxColCenter;
+      justify-content: space-between;
+      @include styleguide.gradient-greys;
+      width: 100%;
+      height: 100%;
+      padding: 10px 5px 10px 5px;
+      div {
+        @include styleguide.gradient-pinkLightblue;
+        height: 150px;
+        width: 80%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      h3 {
+        @include styleguide.h3Style;
+        font-size: 1.8rem;
+        margin: 1.5rem auto;
+      }
+}

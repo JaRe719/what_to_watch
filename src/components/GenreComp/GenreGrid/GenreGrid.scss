@@ -1,1 +1,30 @@
 @use "../../../assets/styleguide/styleguide.scss";
+
+.genre-grid{
+    
+
+    .headline {
+        align-self: flex-start;
+    }
+
+    .heading{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, 1fr);
+        margin: 4rem auto;
+        h2{
+            @include styleguide.h2Style;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .grid{
+        display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 90%;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 5rem auto;
+    }
+}

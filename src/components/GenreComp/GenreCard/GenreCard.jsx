@@ -20,7 +20,7 @@ import scifiImage from '../../../assets/images/sci-fi.png';
 import christmasImage from '../../../assets/images/christmas.png';
 import trillerImage from '../../../assets/images/thriller.png';
 import musicalImage from '../../../assets/images/musical.png';
-
+import allImage from '../../../assets/images/all.png';
 
 const imageMap = {
   Anime: animeImage,
@@ -39,7 +39,8 @@ const imageMap = {
   "Science-Fiction": scifiImage,
   "Buchverfilmungen": buchverfilmungenImage,
   "RomCom": romcomImage,
-  "Politische Filme": politikImage
+  "Politische Filme": politikImage,
+  "Alle Genres": allImage
 };
 
 const GenreCard = ({ genre, mode }) => {
@@ -54,8 +55,10 @@ const GenreCard = ({ genre, mode }) => {
   };
 
   return (
-    <div onClick={() => clickHandler(genre)}>
+    <div className='genreCard' onClick={() => clickHandler(genre)}>
+      <div>
       <img src={imageSrc} alt={genre} />
+      </div>
       <h3>{genre}</h3>
     </div>
   );
