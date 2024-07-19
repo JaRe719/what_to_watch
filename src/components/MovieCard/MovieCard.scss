@@ -1,1 +1,39 @@
-@use "../../assets/styleguide/styleguide.scss";
+@use "../../assets/styleguide/styleguide.scss" as styleguide;
+
+.movieCard {
+  @include styleguide.flexBoxColCenter;
+  justify-content: space-between;
+  @include styleguide.gradient-greys;
+  height: 800px;
+  width: 600px;
+  padding: 50px 20px;
+  article {
+    background: transparent;
+  }
+
+  .movieImgBox {
+    height: 350px;
+    width: 500px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .movieCardTextBox {
+    border: solid red;
+    height: 340px;
+    p {
+      @include styleguide.pStyle;
+      text-align: center;
+      margin-bottom: 3px;
+
+      span {
+        @include styleguide.pStyle;
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -8,6 +8,11 @@ $caribbeanCurrent900: #0c393b;
 }
 
 @font-face {
+  font-family: "Mitr-Regular";
+  src: url("../fonts/Mitr/Mitr-Regular.ttf");
+}
+
+@font-face {
   font-family: "Montserrat-SemiBold";
   src: url("../fonts/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf");
 }
@@ -71,13 +76,23 @@ $caribbeanCurrent900: #0c393b;
   padding: 0;
 }
 
+@mixin pStyle {
+  padding: 0;
+  margin: 0;
+
+  font-family: "Mitr-Regular";
+  font-size: 2rem;
+  line-height: 30px;
+  color: $gunmetal100;
+}
+
 @mixin buttonStyle {
   @include gradient-darkPink;
   height: 60px;
   width: 220px;
 
   font-family: "Montserrat-SemiBold";
-  font-size: 2.6rem;
+  font-size: 2rem;
   text-align: center;
   padding-top: 12px;
 
