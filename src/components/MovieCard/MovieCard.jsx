@@ -1,13 +1,17 @@
 import React from "react";
 import "./MovieCard.scss";
 
-const MovieCard = ({ img, title, genre, plot, runtime, rating, released }) => {
+const MovieCard = ({ img, title, genre, plot, runtime, rating, released, currentChoice, setCurrentChoice}) => {
   if (!img || !title || !genre || !plot || !runtime || !rating || !released) {
     return <div>Loading...</div>;
   }
 
+  const handleChoice = (title)=>{
+    setCurrentChoice(title)
+  };
+  
   return (
-    <section className="movieCard">
+    <section className="movieCard" onClick={()=>handleChoice(title)}>
       <article className="movieImgBox">
         <img src={img} alt={title + " - movie poster"} />
       </article>
