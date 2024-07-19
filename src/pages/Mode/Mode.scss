@@ -7,7 +7,7 @@
   padding: 10px 40px 100px 40px;
 
   .headline {
-    @include styleguide.headlineStyle;
+    align-self: flex-start;
   }
 
   h2 {
