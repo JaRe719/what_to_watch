@@ -3,22 +3,37 @@ import "./GenreGrid.scss";
 import GenreCard from "../GenreCard/GenreCard";
 import movies from "../../../utils/movies.json";
 
-const GenreGrid = (mode) => {
-  // mode gibt die Info, ob es der ranking oder der random mode ist und daher welches symbol oben stehen sollte
-  
-  // get array of genres
-  const keys = Object.keys(movies);
-  console.log("Genres: ", keys);
+// Funktion zum Erzeugen einer Zuordnung von Genres zu Symbolbildern
+const mapGenresToImages = (genres) => {
+  return genres.reduce((acc, genre) => {
+    acc[genre] = `${genre.toLowerCase()}.png`; 
+    return acc;
+  }, {});
+};
 
-// Select a random genre
-  const randomKey = keys[Math.floor(Math.random() * keys.length)];
-  console.log("Random Genre: ", randomKey);
+const GenreGrid = ({ mode }) => {
+  // genres abrufen
+  const genres = Object.keys(movies);
+  
+  // Generierung der Zuordnung von Symbolbildern zu Genres
+  const genreImageMap = mapGenresToImages(genres);
+  
+  console.log("Genres: ", genres);
+  console.log("Genre Image Map: ", genreImageMap);
+  console.log("Mode: ", mode)
 
   return (
-    <div>
-      <GenreCard mode={mode} />
+    <div className="genre-grid">
+      {genres.map((genre) => (
+        <GenreCard
+          key={genre}
+          genre={genre}
+          imageSrc={genreImageMap[genre]} 
+          mode={mode}
+        />
+      ))}
     </div>
-  )
+  );
 }
 
 export default GenreGrid;

@@ -9,7 +9,7 @@ const Genres = () => {
   console.log("Params: ",params);
   return (
     <div>
-      <GenreGrid mode={params} />
+      <GenreGrid mode={params.mode} />
     </div>
   )
 }

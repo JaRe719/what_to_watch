@@ -95,18 +95,12 @@ const RankingComp = ({ trigger, setTrigger }) => {
     fetchData();
   }, [currentFavorite]);
 
+  // Funktion zum speichern des aktuellen Favoriten bei Klick auf Bestätigen
   const handleSave = (movie) => {
     setCurrentFavorite(movie);
     setTrigger(!trigger);
   };
 
-  console.log("movies: ", movies);
-  console.log("genre: ", genre);
-  console.log("suggestionOneData: ", suggestionOneData);
-  console.log("suggestionOne: ", suggestionOne);
-  console.log("suggestionTwoData: ", suggestionTwoData);
-  console.log("suggestionTwo: ", suggestionTwo);
-  console.log("error: ", error);
 
   if (error) {
     return <div>Error: {error}</div>;
