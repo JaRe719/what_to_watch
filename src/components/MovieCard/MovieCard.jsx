@@ -8,7 +8,6 @@ const MovieCard = ({img, title, genre, plot, runtime, rating, released}) => {
     return <div>Loading...</div>;
   }
 
-  console.log("Props: ", img, title, genre, runtime, rating, released)
 
   return (
     <div className='movieCard'>
