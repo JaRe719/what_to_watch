@@ -5,8 +5,9 @@
   justify-content: space-between;
   @include styleguide.gradient-darkPink;
   padding: 10px 40px 100px 40px;
+
   .headline {
-    align-self: flex-start;
+    @include styleguide.headlineStyle;
   }
 
   h2 {

@@ -4,9 +4,9 @@
   @include styleguide.flexBoxColCenter;
   justify-content: space-between;
   @include styleguide.gradient-greys;
-  height: 800px;
+  height: 750px;
   width: 600px;
-  padding: 50px 20px;
+  padding: 25px 20px;
   article {
     background: transparent;
   }
@@ -23,7 +23,6 @@
   }
 
   .movieCardTextBox {
-    border: solid red;
     height: 340px;
     p {
       @include styleguide.pStyle;

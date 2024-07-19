@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./RankingComp.scss";
 import movies from "../../utils/movies.json";
-import loadData from '../../utils/DataFetch';
-import { useParams } from 'react-router-dom';
+import loadData from "../../utils/DataFetch";
+import { useParams } from "react-router-dom";
 import MovieCard from "../MovieCard/MovieCard";
 import Button from "../Button/Button";
 
@@ -13,7 +13,7 @@ const RankingComp = ({ trigger, setTrigger }) => {
   const [suggestionTwoData, setSuggestionTwoData] = useState(null);
   const [currentFavorite, setCurrentFavorite] = useState(null);
   const [currentFavoriteData, setCurrentFavoriteData] = useState(null);
-  const [currentChoice, setCurrentChoice] = useState()
+  const [currentChoice, setCurrentChoice] = useState();
   const [error, setError] = useState(null);
 
   let { genre } = useParams();
@@ -30,7 +30,7 @@ const RankingComp = ({ trigger, setTrigger }) => {
       const randomMovie = Math.floor(Math.random() * movies[genre].length);
       return movies[genre][randomMovie];
     } else {
-      setError('Genre not found');
+      setError("Genre not found");
       return null;
     }
   };
@@ -112,7 +112,12 @@ const RankingComp = ({ trigger, setTrigger }) => {
     return <div>Error: {error}</div>;
   }
 
-  if (!suggestionOneData || !suggestionTwoData || !suggestionOneData.movieData || !suggestionTwoData.movieData) {
+  if (
+    !suggestionOneData ||
+    !suggestionTwoData ||
+    !suggestionOneData.movieData ||
+    !suggestionTwoData.movieData
+  ) {
     return <div>Loading...</div>;
   }
 
@@ -123,7 +128,7 @@ const RankingComp = ({ trigger, setTrigger }) => {
     Runtime: runtimeOne,
     imdbRating: ratingOne,
     Released: releasedOne,
-    Poster: posterOne
+    Poster: posterOne,
   } = suggestionOneData.movieData;
 
   const {
@@ -133,7 +138,7 @@ const RankingComp = ({ trigger, setTrigger }) => {
     Runtime: runtimeTwo,
     imdbRating: ratingTwo,
     Released: releasedTwo,
-    Poster: posterTwo
+    Poster: posterTwo,
   } = suggestionTwoData.movieData;
 
   const favoriteData = currentFavoriteData ? currentFavoriteData.movieData : {};
@@ -145,47 +150,48 @@ const RankingComp = ({ trigger, setTrigger }) => {
     Runtime: runtimeFav,
     imdbRating: ratingFav,
     Released: releasedFav,
-    Poster: posterFav
+    Poster: posterFav,
   } = favoriteData;
 
   return (
-    <div>
-      {currentFavorite ? (
+    <section className="rankingBox">
+      <div className="rankingChoiseBox">
+        {currentFavorite ? (
+          <MovieCard
+            img={posterFav}
+            title={titleFav}
+            genre={genreFav}
+            plot={plotFav}
+            runtime={runtimeFav}
+            rating={ratingFav}
+            released={releasedFav}
+            setCurrentChoice={setCurrentChoice}
+          />
+        ) : (
+          <MovieCard
+            img={posterTwo}
+            title={titleTwo}
+            genre={genreTwo}
+            plot={plotTwo}
+            runtime={runtimeTwo}
+            rating={ratingTwo}
+            released={releasedTwo}
+            setCurrentChoice={setCurrentChoice}
+          />
+        )}
         <MovieCard
-          img={posterFav}
-          title={titleFav}
-          genre={genreFav}
-          plot={plotFav}
-          runtime={runtimeFav}
-          rating={ratingFav}
-          released={releasedFav}
+          img={posterOne}
+          title={titleOne}
+          genre={genreOne}
+          plot={plotOne}
+          runtime={runtimeOne}
+          rating={ratingOne}
+          released={releasedOne}
           setCurrentChoice={setCurrentChoice}
         />
-      ) : (
-        <MovieCard
-          img={posterTwo}
-          title={titleTwo}
-          genre={genreTwo}
-          plot={plotTwo}
-          runtime={runtimeTwo}
-          rating={ratingTwo}
-          released={releasedTwo}
-          setCurrentChoice={setCurrentChoice}
-        />
-      )}
-      <MovieCard
-        img={posterOne}
-        title={titleOne}
-        genre={genreOne}
-        plot={plotOne}
-        runtime={runtimeOne}
-        rating={ratingOne}
-        released={releasedOne}
-        setCurrentChoice={setCurrentChoice}
-      />
-
+      </div>
       <Button text="Bestätigen" action={() => handleSave(currentChoice)} />
-    </div>
+    </section>
   );
 };
 

@@ -1,1 +1,15 @@
 @use "../../assets/styleguide/styleguide.scss";
+
+.rankingBox {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 850px;
+  .rankingChoiseBox {
+    @include styleguide.flexBoxRow;
+    justify-content: space-between;
+    width: 1400px;
+  }
+}
