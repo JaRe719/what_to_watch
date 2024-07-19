@@ -3,8 +3,9 @@ import "./RankingComp.scss";
 import movies from "../../utils/movies.json";
 import loadData from '../../utils/DataFetch';
 import { useParams } from 'react-router-dom';
+import MovieCard from "../MovieCard/MovieCard";
 
-const RankingComp = () => {
+const RankingComp = ({trigger}) => {
   const [suggestion, setSuggestion] = useState(null);
   const [suggestionData, setSuggestionData] = useState(null);
   const [error, setError] = useState(null);
@@ -12,7 +13,21 @@ const RankingComp = () => {
   let { genre } = useParams();
 
   useEffect(() => {
-    if (movies[genre]) {
+    
+    // Select a random genre
+    const keys = Object.keys(movies);
+    console.log("Genres: ", keys);
+    const randomKey = keys[Math.floor(Math.random() * keys.length)];
+    console.log("Random Genre: ", randomKey);
+
+    if (genre === "all" && movies[randomKey]) {
+      const randomMovie = Math.floor(Math.random() * movies[randomKey].length);
+      const suggest = movies[randomKey][randomMovie];
+      console.log("suggest: ", suggest);
+      console.log("randomMovie: ", randomMovie);
+
+      setSuggestion(suggest);
+    } else if (movies[genre]) {
       const randomMovie = Math.floor(Math.random() * movies[genre].length);
       const suggest = movies[genre][randomMovie];
       console.log("suggest: ", suggest);
@@ -22,7 +37,7 @@ const RankingComp = () => {
     } else {
       setError('Genre not found');
     }
-  }, [genre]);
+  }, [genre, trigger]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,23 +66,23 @@ const RankingComp = () => {
     return <div>Error: {error}</div>;
   }
 
-  if (!suggestionData) {
+  if (!suggestionData || !suggestionData.movieData) {
     return <div>Loading...</div>;
   }
-
 
   const { Title, Genre, Plot, Runtime, imdbRating, Released, Poster } = suggestionData.movieData;
 
   return (
-    <div className="ranking-comp">
-      <h1>Suggested Movie</h1>
-      <img src={Poster} alt={Title} />
-      <p>Title: {Title}</p>
-      <p>Genre: {Genre}</p>
-      <p>Plot: {Plot}</p>
-      <p>Runtime: {Runtime}</p>
-      <p>IMDB Rating: {imdbRating}</p>
-      <p>Released: {Released}</p>
+    <div>
+      <MovieCard 
+        img={Poster}
+        title={Title}
+        genre={Genre}
+        plot={Plot}
+        runtime={Runtime}
+        rating={imdbRating}
+        released={Released}
+      />
     </div>
   );
 };
