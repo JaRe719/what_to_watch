@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Chance.scss";
 import logo from "../../assets/images/logo.png";
 import dice from "../../assets/images/dice.png";
-import ChanceLogic from "../../Components/ChanceComp/ChanceLogic/ChanceLogic";
-import ChanceRoller from "../../Components/ChanceComp/ChanceRoller/ChanceRoller";
+import ChanceLogic from "../../components/ChanceComp/ChanceLogic/ChanceLogic";
+import ChanceRoller from "../../components/ChanceComp/ChanceRoller/ChanceRoller";
 import { useNavigate} from "react-router-dom";
 
 const Chance = () => {

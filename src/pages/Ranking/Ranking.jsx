@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Ranking.scss";
 import logo from "../../assets/images/logo.png";
 import arrows from "../../assets/images/arrows.png";
-import RankingComp from "../../Components/RankingComp/RankingComp";
+import RankingComp from "../../components/RankingComp/RankingComp";
 import { useNavigate } from "react-router-dom";
 
 

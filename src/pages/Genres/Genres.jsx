@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Genres.scss";
 import { useParams } from 'react-router-dom';
-import GenreGrid from "../../Components/GenreComp/GenreGrid/GenreGrid";
+import GenreGrid from "../../components/GenreComp/GenreGrid/GenreGrid";
 
 const Genres = () => {
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Pages/Home/Home';
-import Mode from './Pages/Mode/Mode';
-import Genres from './Pages/Genres/Genres';
-import Ranking from './Pages/Ranking/Ranking';
-import Chance from './Pages/Chance/Chance';
-import NoPage from './Pages/NoPage/NoPage';
+import Home from './pages/Home/Home';
+import Mode from './pages/Mode/Mode';
+import Genres from './pages/Genres/Genres';
+import Ranking from './pages/Ranking/Ranking';
+import Chance from './pages/Chance/Chance';
+import NoPage from './pages/NoPage/NoPage';
 import "./App.scss";
 
 
