@@ -184,8 +184,11 @@ const RankingComp = ({ trigger, setTrigger }) => {
           setCurrentChoice={setCurrentChoice}
         />
       </div>
+      <div className="btn">
       <Button text="Bestätigen" action={() => handleSave(currentChoice)} />
-    </section>
+    
+      </div>
+      </section>
   );
 };
 

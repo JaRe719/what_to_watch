@@ -83,6 +83,7 @@ const ChanceLogic = ({ trigger }) => {
         runtime={Runtime}
         rating={imdbRating}
         released={Released}
+        setCurrentChoice={""}
       />
     </div>
   );

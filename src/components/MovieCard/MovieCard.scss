@@ -5,15 +5,16 @@
   justify-content: space-between;
   @include styleguide.gradient-greys;
   height: 750px;
-  width: 600px;
+  width: 46%;
+  max-width: 600px;
   padding: 25px 20px;
   article {
     background: transparent;
   }
 
   .movieImgBox {
-    height: 350px;
-    width: 500px;
+    max-height: 350px;
+    width: 90%;
 
     img {
       height: 100%;

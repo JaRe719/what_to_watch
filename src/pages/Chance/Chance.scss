@@ -8,8 +8,11 @@
   padding: 20px;
 
   height: 100vh;
+  gap: 20vh;
+
   .headline {
     align-self: flex-start;
+    justify-self: flex-start;
 
     img {
       &:nth-of-type(2) {
@@ -17,6 +20,18 @@
         object-fit: contain;
         margin-left: 40px;
       }
+    }
+  }
+  .chanceBoth{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    align-items: center;
+    margin-top: -15rem;
+
+    .movieCard{
+      width: 100%;
     }
   }
 }

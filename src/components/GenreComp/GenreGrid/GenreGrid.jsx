@@ -3,6 +3,7 @@ import "./GenreGrid.scss";
 import GenreCard from "../GenreCard/GenreCard";
 import movies from "../../../utils/movies.json";
 import logo from "../../../assets/images/logo.png"
+import { useNavigate } from 'react-router-dom';
 
 // Funktion zum Erzeugen einer Zuordnung von Genres zu Symbolbildern
 const mapGenresToImages = (genres) => {
@@ -23,10 +24,16 @@ const GenreGrid = ({ mode }) => {
   console.log("Genre Image Map: ", genreImageMap);
   console.log("Mode: ", mode)
 
+  let navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate("/mode");
+  };
+
   return (
     <div className="genre-grid">
       <div className="headline">
-        <img src={logo} alt="TV with W.T.W text" />
+        <img src={logo} alt="TV with W.T.W text" onClick={handleLogoClick}/>
       </div>
       <div className='heading'>
         <h2>Wähle ein Genre</h2>

@@ -9,6 +9,7 @@ const MovieCard = ({ img, title, genre, plot, runtime, rating, released, current
   const handleChoice = (title)=>{
     setCurrentChoice(title)
   };
+
   
   return (
     <section className="movieCard" onClick={()=>handleChoice(title)}>
