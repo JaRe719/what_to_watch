@@ -9,7 +9,7 @@ const Home = () => {
     navigate("/mode");
   };
   return (
-    <section>
+    <section className="homeSide">
       <dir className="homeBox">
         <div className="textBox">
           <p>Don’t know</p>

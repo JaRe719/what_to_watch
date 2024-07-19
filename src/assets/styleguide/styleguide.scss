@@ -34,6 +34,14 @@ $caribbeanCurrent900: #0c393b;
   );
 }
 
+@mixin gradient-dark {
+  background: linear-gradient(
+    130deg,
+    rgba(111, 77, 90, 1) 0%,
+    rgba(12, 57, 59, 1) 100%
+  );
+}
+
 @mixin gradient-pinkLightblue {
   background: linear-gradient(
     315deg,
@@ -87,14 +95,14 @@ $caribbeanCurrent900: #0c393b;
 }
 
 @mixin buttonStyle {
-  @include gradient-darkPink;
-  height: 60px;
+  display: block;
+  @include gradient-dark;
   width: 220px;
 
   font-family: "Montserrat-SemiBold";
   font-size: 2rem;
   text-align: center;
-  padding-top: 12px;
+  padding: 20px 0;
 
-  color: $gunmetal800;
+  color: $gunmetal100;
 }

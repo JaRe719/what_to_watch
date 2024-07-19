@@ -1,1 +1,22 @@
-@use "../../assets/styleguide/styleguide.scss";
+@use "../../assets/styleguide/styleguide.scss" as styleguide;
+
+.chanceSide {
+  @include styleguide.flexBoxColCenter;
+
+  @include styleguide.gradient-darkPink;
+
+  padding: 20px;
+
+  height: 100vh;
+  .headline {
+    align-self: flex-start;
+
+    img {
+      &:nth-of-type(2) {
+        height: 100px;
+        object-fit: contain;
+        margin-left: 40px;
+      }
+    }
+  }
+}

@@ -1,1 +1,21 @@
-@use "../../../assets/styleguide/styleguide.scss";
+@use "../../../assets/styleguide/styleguide.scss" as styleguide;
+
+.chanceRoller {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  height: 300px;
+  width: 230px;
+  div {
+    background-color: transparent;
+    padding: 10px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
