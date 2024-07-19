@@ -21,4 +21,4 @@ const GenreGrid = (mode) => {
   )
 }
 
-export default GenreGrid
+export default GenreGrid;
