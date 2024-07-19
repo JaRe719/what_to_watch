@@ -12,11 +12,11 @@ const Home = () => {
     <section className="homeSide">
       <dir className="homeBox">
         <div className="textBox">
-          <p>Don’t know</p>
+          <p>{"Don't know"}</p>
           <h1>what to watch?</h1>
         </div>
 
-        <Button text="Let’s find out !" action={handleClick} />
+        <Button text={"Let's find out!"} action={handleClick} />
       </dir>
     </section>
   );
