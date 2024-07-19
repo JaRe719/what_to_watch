@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../components/Button/Button";
+import Button from "../../Components/Button/Button";
 import "./Home.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const Home = () => {
           <h1>what to watch?</h1>
         </div>
 
-        <Button text="Let’s find out !" action={handleClick} />
+        <Button text="Let’s find out !" action={handleClick()} />
       </dir>
     </section>
   );
