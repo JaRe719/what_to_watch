@@ -14,7 +14,21 @@ const ChanceLogic = ({ trigger }) => {
   let { genre } = useParams();
 
   useEffect(() => {
-    if (movies[genre]) {
+    
+    // Select a random genre
+    const keys = Object.keys(movies);
+    console.log("Genres: ", keys);
+    const randomKey = keys[Math.floor(Math.random() * keys.length)];
+    console.log("Random Genre: ", randomKey);
+
+    if (genre === "all" && movies[randomKey]) {
+      const randomMovie = Math.floor(Math.random() * movies[randomKey].length);
+      const suggest = movies[randomKey][randomMovie];
+      console.log("suggest: ", suggest);
+      console.log("randomMovie: ", randomMovie);
+
+      setSuggestion(suggest);
+    } else if (movies[genre]) {
       const randomMovie = Math.floor(Math.random() * movies[genre].length);
       const suggest = movies[genre][randomMovie];
       console.log("suggest: ", suggest);
