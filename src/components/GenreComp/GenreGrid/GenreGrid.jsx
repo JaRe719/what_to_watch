@@ -2,23 +2,54 @@ import React from 'react';
 import "./GenreGrid.scss";
 import GenreCard from "../GenreCard/GenreCard";
 import movies from "../../../utils/movies.json";
+import logo from "../../../assets/images/logo.png"
 
-const GenreGrid = (mode) => {
-  // mode gibt die Info, ob es der ranking oder der random mode ist und daher welches symbol oben stehen sollte
+// Funktion zum Erzeugen einer Zuordnung von Genres zu Symbolbildern
+const mapGenresToImages = (genres) => {
+  return genres.reduce((acc, genre) => {
+    acc[genre] = `${genre.toLowerCase()}.png`; 
+    return acc;
+  }, {});
+};
+
+const GenreGrid = ({ mode }) => {
+  // genres abrufen
+  const genres = Object.keys(movies);
   
-  // get array of genres
-  const keys = Object.keys(movies);
-  console.log("Genres: ", keys);
-
-// Select a random genre
-  const randomKey = keys[Math.floor(Math.random() * keys.length)];
-  console.log("Random Genre: ", randomKey);
+  // Generierung der Zuordnung von Symbolbildern zu Genres
+  const genreImageMap = mapGenresToImages(genres);
+  
+  console.log("Genres: ", genres);
+  console.log("Genre Image Map: ", genreImageMap);
+  console.log("Mode: ", mode)
 
   return (
-    <div>
-      <GenreCard mode={mode} />
+    <div className="genre-grid">
+      <div className="headline">
+        <img src={logo} alt="TV with W.T.W text" />
+      </div>
+      <div className='heading'>
+        <h2>Wähle ein Genre</h2>
+        <h2>...oder lass dir alle anzeigen</h2>
+      </div>
+      <div className='grid'>
+      {genres.map((genre) => (
+        <GenreCard
+          key={genre}
+          genre={genre}
+          imageSrc={genreImageMap[genre]} 
+          mode={mode}
+        />
+      ))}
+      <GenreCard 
+      key="all"
+      genre="Alle Genres"
+      imageSrc={genreImageMap["all"]}
+      mode={mode}
+      />
+      </div>
     </div>
-  )
+  );
 }
 
 export default GenreGrid;
