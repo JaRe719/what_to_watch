@@ -1,71 +1,64 @@
-# Getting Started with Create React App
+![Logo](https://i.ibb.co/W66L8PR/What-to-Watch.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MiniHackathon 2024 - Open-Movie-Database - Projekt "What to Watch?"
 
-## Available Scripts
+Willkommen zu unserem GitHub Repository für die zweite Challenge des MiniHackathons 2024 von Kevin Chromik! Dieses Projekt bietet eine personalisierte Filmempfehlungsplattform, die Nutzern hilft, Entscheidungen zu treffen, was sie als Nächstes anschauen möchten.
 
-In the project directory, you can run:
+## Einleitung
 
-### `npm start`
+Die Wahl des richtigen Films oder der richtigen Serie kann oft überwältigend sein. "What to Watch?" vereinfacht diesen Prozess durch maßgeschneiderte Empfehlungen basierend auf Ihren Endscheidungen oder durch den Zufall.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Unsere Lösung
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Projektübersicht
 
-### `npm test`
+**What-to-Watch?** ist eine benutzerfreundliche Website, die dem unentschlossenden Filmliebhaber:innen, schnell und einfach die möglichkeit bietet, ein Film für den "heutigen" Abend zufinden. Hier zu gibt es 2 Optionen, 1. Der Film Match und 2. die Film Überraschung.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Demo
 
-### `npm run build`
+ [Hier Gehts zur Netlify-Demo .... Klick!](https://6697dd257303eb0009461d3c--no-shit-day.netlify.app)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Funktionen der Anwendung
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Modus auswählen**
+   - der user kann zwischen 2 Modis auswählen 
 
-### `npm run eject`
+2.1 **Besten Match**:
+   - Nutzer können ihr bevorzugtes Genre auswählen.
+   - Die Anwendung verwendet diese information, um ein Battle "Film gegen Film" zu generieren.
+   - Der favorisierte Film bleibt und ein neuer Filmvorschlag wird angezeigt.
+   - Dies kann belibig vortgeführt werden.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2.2 **Random**:
+   - Nutzer können ihr bevorzugtes Genre auswählen.
+   - Die Anwendung verwendet diese information, um ein Zufälligen generierten Vorschlag, aus der Top 50 des gewählten Genre, zu erhalten.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Technologien und Tools
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Frontend**: HTML, SCSS, JavaScript, React
+- **API**: The Open Movie Database
+- **Hosting**: Netlify
+  
+## API-Dokumentation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **The Open Movie Database**:  [OMDb API](http://www.omdbapi.com)
+- **API Dokumentation**:    [Hier ist die Dokumentation](http://www.omdbapi.com)
 
-## Learn More
+Wir freuen uns darauf, unsere Lösung zu präsentieren und wünschen allen anderen Teilnehmer:Innen viel Erfolg!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Falls Sie Anregungen oder Fragen haben, zögern Sie nicht, uns zu kontaktieren. 
 
-### Code Splitting
+Happy Hacking!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+#### Dev Team
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [@Janine7492](https://www.github.com/Janine7492)
 
-### Making a Progressive Web App
+- [@ReBehrens](https://www.github.com/ReBehrens)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# what_to_watch
