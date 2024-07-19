@@ -3,13 +3,13 @@ import "./ChanceLogic.scss";
 import movies from "../../../utils/movies.json";
 import loadData from '../../../utils/DataFetch';
 import { useParams } from 'react-router-dom';
+import MovieCard from "../../MovieCard/MovieCard";
 
 
-const ChanceLogic = () => {
+const ChanceLogic = ({ trigger }) => {
   const [suggestion, setSuggestion] = useState(null);
   const [suggestionData, setSuggestionData] = useState(null);
   const [error, setError] = useState(null);
-  const [trigger, setTrigger] = useState(false);
 
   let { genre } = useParams();
 
@@ -53,26 +53,25 @@ const ChanceLogic = () => {
     return <div>Error: {error}</div>;
   }
 
-  if (!suggestionData) {
+  if (!suggestionData || !suggestionData.movieData) {
     return <div>Loading...</div>;
   }
 
-
   const { Title, Genre, Plot, Runtime, imdbRating, Released, Poster } = suggestionData.movieData;
-
-
 
   return (
     <div>
-      <img src={Poster} alt={Title} />
-      <p>Title: {Title}</p>
-      <p>Genre: {Genre}</p>
-      <p>Plot: {Plot}</p>
-      <p>Runtime: {Runtime}</p>
-      <p>IMDB Rating: {imdbRating}</p>
-      <p>Released: {Released}</p>
+      <MovieCard 
+        img={Poster}
+        title={Title}
+        genre={Genre}
+        plot={Plot}
+        runtime={Runtime}
+        rating={imdbRating}
+        released={Released}
+      />
     </div>
-  )
+  );
 }
 
 export default ChanceLogic;

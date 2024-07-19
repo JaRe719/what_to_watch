@@ -1,11 +1,22 @@
 import React from 'react';
 import "./ChanceRoller.scss";
+import dice from "../../../assets/images/dice.png";
+import Button from "../../Button/Button";
 
-const ChanceRoller = () => {
+const ChanceRoller = ({setTrigger, trigger, setBoth}) => {
+
+  const clickHandler = ()=>{
+    setTrigger(!trigger);
+    setBoth(true);
+  }
+
   return (
-    <div>
-      
-    </div>
+    <section className='chanceRoller'>
+      <div>
+        <img src={dice} alt="dice with questionmarks instead of numbers" />
+      </div>
+      <Button text="Würfle" action={clickHandler}/>
+    </section>
   )
 }
 
