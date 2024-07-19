@@ -21,5 +21,6 @@
 
   h2 {
     @include styleguide.h2Style;
+    margin-bottom: 3rem;
   }
 }

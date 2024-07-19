@@ -10,6 +10,12 @@
   .rankingChoiseBox {
     @include styleguide.flexBoxRow;
     justify-content: space-between;
-    width: 1400px;
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  .btn{
+    display: flex;
+    justify-content: center;
   }
 }
